@@ -27,7 +27,7 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-8">
-                    <h2>Reques Class <?=$_SESSION['id_register'];?></h2>
+                    <h2>Reques Class</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="../index.php">Home</a>
@@ -75,7 +75,7 @@
                             // INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 
                             $query = "SELECT a.*, b.nama_pemilik as nama FROM rekues_kelas a INNER JOIN register b ON a.id_register=b.id_register WHERE b.id_register = '$sesi' ";
-
+                            
                             $result = mysqli_query($con, $query);
                             if(mysqli_num_rows($result) == 0){    
                                 echo '<tr><td colspan="6">Tidak ada data!</td></tr>';
