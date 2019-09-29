@@ -23,7 +23,7 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-8">
-                    <h2>Tambah Data</h2>
+                    <h2>Tambah Data <?=$_SESSION['id_register'];?></h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="../index.php">Home</a>
@@ -64,7 +64,7 @@
                         <div class="ibox-content">
                             <form action="tambah_proses.php" method="post" class="form-horizontal" enctype="multipart/form-data">
                                 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label class="col-sm-2 control-label">Nama</label>
                                         <div class="col-sm-10">
                                             <select class="form-control" name="nama">
@@ -80,7 +80,7 @@
                                                 <?php } ?>
                                             </select>
                                         </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Kelas</label>
                                         <div class="col-sm-10">
