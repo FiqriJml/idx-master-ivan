@@ -69,7 +69,13 @@
                             include('../koneksi.php');
 
                             $sesi = $_SESSION['id_register'];
-                            $query = "SELECT * FROM rekues_kelas WHERE id_rekues = '$sesi' ";
+                            //Gunakan Join tabel agar bisa memanggil nama pemilik dari tabel register
+                            // SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+                            // FROM Orders
+                            // INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+                            $query = "SELECT a.*, b.nama_pemilik as nama FROM rekues_kelas a INNER JOIN register b ON a.id_register=b.id_register WHERE b.id_register = '$sesi' ";
+                            
                             $result = mysqli_query($con, $query);
                             if(mysqli_num_rows($result) == 0){    
                                 echo '<tr><td colspan="6">Tidak ada data!</td></tr>';
